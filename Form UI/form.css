@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+.form_questons{
+    background-image: linear-gradient(
+        -45deg,
+        hsla(172, 88%, 80%, 0.4) 0%,
+        hsla(172, 88%, 35%, 0.2) 20%, 
+        hsla(172, 88%, 80%, 0.4) 40%,
+        hsla(172, 88%, 35%, 0.2) 60%, 
+        hsla(172, 88%, 80%, 0.4) 80%,
+        hsla(172, 88%, 35%, 0.2) 100%
+        );
+    backdrop-filter: blur(10px);
+    animation: gradient 10s infinite alternate;
+    background-size: 400%;
+    width: 60%;
+    max-width: 1000px;
+    height: 700px;
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: box-shadow 0.2s ease-out;
+    color: white;
+}
+.form_questons:hover{
+    box-shadow: 0px 0px 10px 5px rgb(204, 204, 204);
+}
+.form_questons form{
+    flex-grow: 1;
+    display: flex;
+    font-size: 25px;
+}
+.form_questons fieldset{
+    border: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.form_questons legend{
+    padding: 12px;
+    font-size: 15px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    color: rgb(155, 0, 0);
+}
+.form_questons h1{
+    padding: 5% 10% 0px;
+    text-align: center;
+    font-size: 35px;
+    font-family: Ubuntu;
+}
+@keyframes gradient {
+    0% {
+        background-position: right;
+      }
+    100% {
+        background-position: left;
+      }
+  }
+input:not([type="submit"]){
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+}
+input:not([type="color"]){
+    border-radius: 10px;
+    width: 90%;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    box-shadow: 3px 2px 8px black;
+}
+input[type="color"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width:40px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0px 11%;
+}
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0.1px 0.1px 3px white,1.5px 1.5px 5px black;
+}
+input[type="color"]::-webkit-color-swatch:hover{
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0),0px 0px 5px rgb(255, 255, 255);
+}
+input[type="color"]::-moz-color-swatch{
+    border-radius: 50%;
+    border: none;
+
+}
+input[type="text"]:hover, input[type="tel"]:hover, input[type="email"]:hover{
+    box-shadow: inset 0px 0px 5px black;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+#space{
+  text-align: right;
+}
+#contact_email[type="email"] {
+    margin-bottom: 5%;
+  }
+#tel_contact[type="tel"] {
+    margin-top: 5%;
+}
+input[type="submit"]{
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+    margin-bottom: 4%;
+    transition: background-color 0.5s ease-in-out;
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+input[type="submit"]:hover{
+    background-color: rgba(6, 197, 172, 0.5);
+    cursor: pointer;
+    animation-name: grow-shrink;
+    animation-duration: 0.7s;
+}
+#web_offer{
+    margin: 1px;
+}
+@keyframes grow-shrink {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  #color_word{
+    color: hsla(172, 88%, 38%, 1);
+    text-shadow: 0px 0px 4px hsla(172, 88%, 38%, 0.5);
+  }
+  label{
+    text-shadow: 0.3px 0.3px 3px rgba(0, 0, 0, 0.8);
+  }
+::placeholder{
+    text-align: center;
+}
+option{
+    background-color: red;
+    background: blue;
+}
+#lart{
+  padding-bottom: 4%;
+}
+#posht{
+  padding-top: 4%;
+}
+/* Drop Down Menu */
+ul {
+  list-style: none;
+}
+.list, .list2 {
+  width: 92%;
+  background-color: rgb(1, 146, 127);
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+  max-height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.list-items {
+  padding: 3px 0px;
+}
+.list-items:hover {
+  background-color: #89a8a0;
+  border-radius: 10px;
+}
+.limit{
+    position: relative;
+  }
+.overlay {
+    position: absolute;
+    z-index: 9;
+    left: 4%;
+    top: 45px;
+  }
+.overlay2 {
+    position: absolute;
+    z-index: 9;
+    left: 4%;
+    top: 45px;
+  }
+/* End Drop Down Menu   */
+/* Scroll Bar Theme */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(1, 146, 127);
+  border-radius: 0px 10px 10px 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(1, 105, 91);
+  /* height: 1px; */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

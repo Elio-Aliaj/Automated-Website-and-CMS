@@ -1,0 +1,278 @@
+*{
+  border: 0px;
+  margin: 0px;
+}
+
+//$Header***
+.header_AXZCAASD{
+  
+header {
+  background-color: #a01818;
+  border-bottom: 2px solid #193067;
+}
+
+nav {
+  background-color: #193067;
+  display: block;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  border-right: 1px solid #000000;
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+nav ul li a {
+  color: #FFFFFF;
+  display: block;
+  margin: 0;
+  padding: 15px;
+  text-decoration: none;
+}
+
+}
+//!Header***
+
+.section1_img{
+    background-image: url(Section1_BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+//$Section1***
+#section1{
+  
+.section {
+  padding: 80px;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 6rem;
+  color: #761e1e;
+  text-shadow: 2px 2px #1e2452;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: #000000;
+  text-align: justify;
+  max-width: 700px;
+  margin: auto;
+}
+
+}
+//!Section1***
+
+
+
+//$Section2***
+#section2{
+  
+.about-section {
+  background-color: #761e1e;
+  color: #ffffff;
+  padding: 50px;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #1e2452;
+  text-shadow: 2px 2px #000000;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-shadow: 1px 1px #000000;
+}
+
+}
+//!Section2***
+
+#img_card1,#img_card2,#img_card3{
+  min-height: 300px;
+  max-height: 500px;
+  min-width: 300px;
+  max-width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#img_card1{
+  background-image: url(./Cart_Img1.png);
+}
+#img_card2{
+  background-image: url(./Cart_Img2.png);
+}
+#img_card3{
+  background-image: url(./Cart_Img3.png);
+}
+
+//$Section3***
+#section3{
+  
+.services {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #0b1351;
+  color: #fff;
+}
+
+.card {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  padding: 2%;
+  background-color: #035e12;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h3 {
+  font-size: 24px;
+  margin: 10px;
+  text-shadow: 1px 1px #000;
+}
+
+p {
+  font-size: 18px;
+  margin: 10px;
+  text-shadow: 1px 1px #000;
+}
+
+img[id^="img_card"] {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+}
+//!Section3***
+
+
+//$Section4***
+#section4{
+
+}
+//!Section4***
+
+
+//$Section5***
+#section5{
+  
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.left-section {
+  flex-basis: 45%;
+  padding-right: 50px;
+}
+
+.right-section {
+  flex-basis: 45%;
+}
+
+form {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0b1351;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f1f1;
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: #035e12;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #000000;
+}
+
+
+}
+//!Section5***
+
+//$Footer***
+.footer_AXZCAASD{
+  
+.footer {
+   background: #333;
+   color: #fff;
+   padding: 10px;
+   text-align: center;
+}
+.footer p {
+   margin: 0;
+}
+
+}
+//!Footer***
