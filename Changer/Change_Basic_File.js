@@ -4,12 +4,15 @@ import cheerio from "cheerio";
 import fs from "fs";
 import { readFileSync, writeFileSync } from "fs";
 import sass from "node-sass";
+import { resolve } from "path";
+import { rejects } from "assert";
 
 // import Call from "../AI Caller/AI_Caller.js"
 
-export default function changer(data, tag) {
+export default async function changer(data, tag) {
+  var stats = "none";
   var tagsObject = {
-    title: function (data, tag) {
+    Title: function (data) {
       // Load the HTML file
       const html = fs.readFileSync("../Gen_Websit/Gen_Web.html", "utf8");
 
@@ -21,27 +24,28 @@ export default function changer(data, tag) {
 
       // Save the modified HTML back to disk
       fs.writeFileSync("../Gen_Websit/Gen_Web.html", $.html());
-      console.log("Title Changed");
+
+      return (stats = "Successful");
     },
     header: async function (data) {
-      //Calling Dall-e API for Logo
-          // await fetchAsync();
-          // async function fetchAsync() {
-          //   let response = await fetch("http://localhost:3000/Call_Dall-E", {
-          //     method: "POST",
-          //     headers: {
-          //       "Content-Type": "application/json",
-          //     },
-          //     body: JSON.stringify(img_req),
-          //   });
-          //     let data = await response.json();
-          //     const b64 = data.response.data[0]["b64_json"];
-          //     const buffer = Buffer.from(b64, "base64");
-          //     index++;
-          //     fs.writeFileSync(`../Gen_Websit/Cart_Img${index}.png`, buffer);
-          //     console.log("Done Image");
-          // }
-            
+      //Calling Dall-e API for Logo (Not Done)
+      // await fetchAsync();
+      // async function fetchAsync() {
+      //   let response = await fetch("http://localhost:3000/Call_Dall-E", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(img_req),
+      //   });
+      //     let data = await response.json();
+      //     const b64 = data.response.data[0]["b64_json"];
+      //     const buffer = Buffer.from(b64, "base64");
+      //     index++;
+      //     fs.writeFileSync(`../Gen_Websit/Cart_Img${index}.png`, buffer);
+      //     console.log("Done Image");
+      // }
+
       let msg = {};
       msg.string =
         "Make a navigation bar within <header> with this info (do not include <header> tag): color_1:" +
@@ -50,13 +54,15 @@ export default function changer(data, tag) {
         data.web_color2.toString() +
         " color_3:" +
         data.web_color3.toString();
-      fetch("http://localhost:3000/Call", {
+
+      const response = await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(msg),
       })
+        //data = await response.json();
         .then((response) => response.json())
         .then((data) => {
           console.log("respond back data: ", data);
@@ -80,10 +86,10 @@ export default function changer(data, tag) {
                 endIndex
               );
             } else {
-              console.log("End tag not found.");
+              console.log("End tag not found. (html)");
             }
           } else {
-            console.log("Start tag not found.");
+            console.log("Start tag not found. (html)");
           }
           //Changing HTML*********************************
           const html = fs.readFileSync("../Gen_Websit/Gen_Web.html", "utf8");
@@ -111,10 +117,10 @@ export default function changer(data, tag) {
                 endIndex
               );
             } else {
-              console.log("End tag not found.");
+              console.log("End tag not found. (CSS)");
             }
           } else {
-            console.log("Start tag not found.");
+            console.log("Start tag not found. (CSS)");
           }
           // Changing the CSS file*****************
           const scssFile = "../Gen_Websit/Gen_Web.scss";
@@ -173,37 +179,38 @@ export default function changer(data, tag) {
           }, 5000);
         })
         .catch((error) => console.error(error));
+
+      return (stats = "Successful");
     },
     section1: async function (data) {
-      console.log(data);
-      // Calling for an Image to the Dall-E API***************************************************************************************************************************************************************************
-      let img_req = {};
-      img_req.msg =
-        "Background image for website type: " +
-        data.web_type.toString() +
-        ", with theme colors: " +
-        data.web_color1.toString() +
-        " ," +
-        data.web_color2.toString() +
-        " ," +
-        data.web_color3.toString();
-      img_req.size = ("1024x1024");
-      await fetchAsync();
+      // // Calling for an Image to the Dall-E API***************************************************************************************************************************************************************************
+      // let img_req = {};
+      // img_req.msg =
+      //   "Background image for website type: " +
+      //   data.web_type.toString() +
+      //   ", with theme colors: " +
+      //   data.web_color1.toString() +
+      //   " ," +
+      //   data.web_color2.toString() +
+      //   " ," +
+      //   data.web_color3.toString();
+      // img_req.size = "1024x1024";
+      // await fetchAsync();
 
-      async function fetchAsync() {
-        let response = await fetch("http://localhost:3000/Call_Dall-E", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(img_req),
-        });
-        let data = await response.json();
-        const b64 = data.response.data[0]["b64_json"];
-        const buffer = Buffer.from(b64, "base64");
-        fs.writeFileSync(`../Gen_Websit/Section1_BG.png`, buffer);
-        console.log("Done Image");
-      }
+      // async function fetchAsync() {
+      //   let response = await fetch("http://localhost:3000/Call_Dall-E", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(img_req),
+      //   });
+      //   let data = await response.json();
+      //   const b64 = data.response.data[0]["b64_json"];
+      //   const buffer = Buffer.from(b64, "base64");
+      //   fs.writeFileSync(`../Gen_Websit/Section1_BG.png`, buffer);
+      //   console.log("Done Image");
+      // }
 
       //Calling for The ChatGPT API to make the first section***************************************************************************************************************************************************************************
       let msg = {};
@@ -218,7 +225,7 @@ export default function changer(data, tag) {
         data.web_color3.toString() +
         " , the first section should include a big text with 2 to 3 words and a small paragraph with what is good about the company, give no background-color because it would be an image with similar color as the text, make text to be readable by change colors a bit if is needed or adding shadows";
       console.log("request:" + msg.string);
-      fetch("http://localhost:3000/Call", {
+      await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -337,12 +344,13 @@ export default function changer(data, tag) {
                 }
               }
             );
-          }, 5000);
-          console.log("Done!");
+          }, 100);
         })
         .catch((error) => console.error(error));
+
+      return (stats = "Successful");
     },
-    section2: function (data) {
+    section2: async function (data) {
       //Calling for The ChatGPT API to make the About section***************************************************************************************************************************************************************************
       let msg = {};
       msg.string =
@@ -358,7 +366,7 @@ export default function changer(data, tag) {
         data.web_color3.toString() +
         ", make text to be readable by change colors a bit if is needed or by adding text shadows";
       console.log("request:" + msg.string);
-      fetch("http://localhost:3000/Call", {
+      await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -477,49 +485,50 @@ export default function changer(data, tag) {
                 }
               }
             );
-          }, 5000);
+          }, 100);
 
           console.log("Done!");
         })
         .catch((error) => console.error(error));
+      return (stats = "Successful");
     },
     section3: async function (data) {
       //Making data ready to sand with request
-      let arr = [data.web_offer1,data.web_offer2,data.web_offer3];
+      let arr = [data.web_offer1, data.web_offer2, data.web_offer3];
       let index = 0;
-        for await (const result of arr){
-              let img_req = {};
-              img_req.msg =
-              "Image for the service card, website type: " +
-              data.web_type.toString() +
-              ", with theme colors: " +
-              data.web_color1.toString() +
-              " ," +
-              data.web_color2.toString() +
-              " ," +
-              data.web_color3.toString() +
-              " , website service: " +
-              result;
-              img_req.size = "256x256";
-              console.log(img_req.msg);
-          // Calling for an Image to the Dall-E API***************************************************************************************************************************************************************************
-          await fetchAsync();
-          async function fetchAsync() {
-            let response = await fetch("http://localhost:3000/Call_Dall-E", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(img_req),
-            });
-              let data = await response.json();
-              const b64 = data.response.data[0]["b64_json"];
-              const buffer = Buffer.from(b64, "base64");
-              index++;
-              fs.writeFileSync(`../Gen_Websit/Cart_Img${index}.png`, buffer);
-              console.log("Done Image");
-          }
+      for await (const result of arr) {
+        let img_req = {};
+        img_req.msg =
+          "Image for the service card, website type: " +
+          data.web_type.toString() +
+          ", with theme colors: " +
+          data.web_color1.toString() +
+          " ," +
+          data.web_color2.toString() +
+          " ," +
+          data.web_color3.toString() +
+          " , website service: " +
+          result;
+        img_req.size = "256x256";
+        console.log(img_req.msg);
+        // Calling for an Image to the Dall-E API***************************************************************************************************************************************************************************
+        //await fetchAsync();
+        async function fetchAsync() {
+          let response = await fetch("http://localhost:3000/Call_Dall-E", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(img_req),
+          });
+          let data = await response.json();
+          const b64 = data.response.data[0]["b64_json"];
+          const buffer = Buffer.from(b64, "base64");
+          index++;
+          fs.writeFileSync(`../Gen_Websit/Cart_Img${index}.png`, buffer);
+          console.log("Done Image");
         }
+      }
       // Calling ChatGPT API to make a section 'Serves offered'
       let msg = {};
       msg.string =
@@ -540,7 +549,7 @@ export default function changer(data, tag) {
         " ," +
         data.web_offer3.toString() +
         " , put each service in a card and make text readable by change colors a bit or by adding text shadows with blur, add on every card an img tag with 'id = img_card1' where the number changes 1 to 3, keep the image in the center of the card and do not include src and alt in the";
-      fetch("http://localhost:3000/Call", {
+      await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -664,11 +673,12 @@ export default function changer(data, tag) {
           console.log("Done!");
         })
         .catch((error) => console.error(error));
+      return (stats = "Successful");
     },
     // section4: function (data) {
     //   console.log("section4");
     // },
-    section5: function (data) {
+    section5: async function (data) {
       let msg = {};
       msg.string =
         "Make a section (do not include <section> tag and keep html and css split): where it is split in two, on the left is a Welcoming to contact and an paragraf to why us and how to contact with the email:" +
@@ -676,14 +686,14 @@ export default function changer(data, tag) {
         " and the phone number:" +
         data.tel_contact.toString() +
         " and on the right is a from with asks for name , email and the message and are submited to this emaile:" +
-        data.contact_email.toString() + 
+        data.contact_email.toString() +
         " and to style this form use this colors theme: color_1: " +
         data.web_color1.toString() +
         " color_2:" +
         data.web_color2.toString() +
         " color_3:" +
         data.web_color3.toString();
-      fetch("http://localhost:3000/Call", {
+      await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -806,15 +816,15 @@ export default function changer(data, tag) {
           }, 5000);
         })
         .catch((error) => console.error(error));
+      return (stats = "Successful");
     },
-
-    footer: function (data) {
+    footer: async function (data) {
       let msg = {};
       msg.string =
         "Make a footer section (do not include <footer> tag) with the name of the websitde: " +
         data.web_name.toString() +
         " and the copy right signiture and add 'Webisite made with GeneRaitionis'";
-      fetch("http://localhost:3000/Call", {
+      await fetch("http://localhost:3000/Call", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -937,15 +947,16 @@ export default function changer(data, tag) {
           }, 5000);
         })
         .catch((error) => console.error(error));
-
+      return (stats = "Successful");
     },
-    script: function (data) {
+    script: async function (data) {
       console.log("script");
     },
   };
   if (tagsObject[tag]) {
-    tagsObject[tag](data, tag);
+    await tagsObject[tag](data);
   } else {
     console.log("Invalid tag");
   }
+  return stats;
 }

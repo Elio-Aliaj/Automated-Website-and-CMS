@@ -3,10 +3,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import changer from "../Changer/Change_Basic_File.js";
+import { config } from "dotenv";
+config({ path: "../.env" });
+import chalk from "chalk";
 
 const configuration = new Configuration({
-  organization: "", //get ID form OpenAI
-  apiKey: "", //get the key form OpenAI
+  organization: process.env.ORGANIZATION, //get ID form OpenAI
+  apiKey: process.env.API_KEY, //get the key form OpenAI
 });
 
 const openai = new OpenAIApi(configuration);
@@ -21,12 +24,30 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Getting Form Data
 app.post("/submit-form", async (req, res) => {
-  const Data = req.body;
-  const tags = ["title"]; //change this to change diffrent section of the webside!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const data = req.body;
+  const tags = [
+    "Title",
+    "header",
+    "section1",
+    "section2",
+    "section3",
+    "section5",
+    "footer",
+  ];
   //'title', 'header', 'section1', 'section2', 'section3', 'section4', 'section5','footer', 'script'];
-  tags.forEach((tag, index) => {
-    changer(Data, tag);
-  });
+  for (const tag of tags) {
+    try {
+      const result = await changer(data, tag);
+      console.log(
+        chalk.bold.magenta("Status for " + tag + ": ") + chalk.green(result)
+      );
+    } catch (error) {
+      console.error(
+        chalk.bold.magenta("Error occurred for the tag " + tag + ": ") +
+          chalk.red(error)
+      );
+    }
+  }
   res.json("DONE!");
 });
 
