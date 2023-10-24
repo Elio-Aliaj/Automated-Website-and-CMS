@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from "openai";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import changer from "../Changer/Change_Basic_File.js";
+import webPartCreator from "../Changer/Web_Part_Creator.js";
 import { config } from "dotenv";
 config({ path: "../.env" });
 import chalk from "chalk";
@@ -22,37 +22,37 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Getting Form Data
-app.post("/submit-form", async (req, res) => {
-  const data = req.body;
-  const tags = [
+//Getting data from Form (User_Interface.html) after submission and processing to create every part of the website
+app.post("/submit-form", async (formData) => {
+  formData = formData.body;
+  const webParts = [
     "Title",
-    "header",
-    "section1",
-    "section2",
-    "section3",
-    "section5",
-    "footer",
+    "Header",
+    "Section1",
+    "Section2",
+    "Section3",
+    // "Section4",
+    "Section5",
+    "Footer",
   ];
-  //'title', 'header', 'section1', 'section2', 'section3', 'section4', 'section5','footer', 'script'];
-  for (const tag of tags) {
+  for (let webPart of webParts) {
     try {
-      const result = await changer(data, tag);
+      const statusPart = await webPartCreator(formData, webPart);
       console.log(
-        chalk.bold.magenta("Status for " + tag + ": ") + chalk.green(result)
+        chalk.bold.magenta("Status for " + webPart + ": ") +
+          chalk.green(statusPart)
       );
     } catch (error) {
       console.error(
-        chalk.bold.magenta("Error occurred for the tag " + tag + ": ") +
+        chalk.bold.magenta("Error occurred for " + webPart + " part: ") +
           chalk.red(error)
       );
     }
   }
-  res.json("DONE!");
 });
 
-app.post("/Call", async (req, res) => {
-  // Calling API of AI(ChatGPT)
+// Calling API of AI(ChatGPT)
+app.post("/Call_Chat-GPT", async (req, res) => {
   const data = req.body;
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
@@ -60,7 +60,7 @@ app.post("/Call", async (req, res) => {
       {
         role: "system",
         content:
-          "Generate code for websites. (Put code in this format: $HTML {code} !HTML , $CSS {code} !CSS , $JavaScript {code} !JavaScript)",
+          "Generate code for websites. (Put code in this format: $HTML {code} !HTML , $CSS {code} !CSS , $JavaScript {code} !JavaScript on separate files)[Use only English]",
       },
       {
         role: "user",
@@ -73,18 +73,16 @@ app.post("/Call", async (req, res) => {
   });
 });
 
+// Calling API of AI(Dall-E)
 app.post("/Call_Dall-E", async (req, res) => {
-  // Calling API of AI(Dall-E)
-  const data = req.body;
-  console.log(data);
-
+  const instructions = req.body;
   const response = await openai.createImage({
-    prompt: `${data.msg}`,
+    prompt: `${instructions.string}`,
     n: 1,
     // size: "256x256",
     // size: "512x512",
     // size: "1024x1024",
-    size: `${data.size}`,
+    size: `${instructions.size}`,
     response_format: "b64_json",
   });
   res.json({

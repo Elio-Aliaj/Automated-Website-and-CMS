@@ -18,8 +18,8 @@
   backdrop-filter: blur(10px);
   animation: gradient 10s infinite alternate;
   background-size: 400%;
-  width: 60%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 800px;
   height: 700px;
   position: relative;
   font-family: "Roboto Condensed", sans-serif;
@@ -70,7 +70,7 @@ input:not([type="submit"]) {
   font-size: 15px;
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+  text-align: center;  
 }
 input:not([type="color"]) {
   border-radius: 10px;
@@ -89,7 +89,7 @@ input[type="color"] {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  margin: 0px 11%;
+  margin: 0px 8%;
 }
 input[type="color"]::-webkit-color-swatch {
   border-radius: 50%;

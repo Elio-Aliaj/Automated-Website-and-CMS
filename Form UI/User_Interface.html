@@ -1,152 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Interface</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="./Animated_Background_UI/BG1.css">
-    <link rel="stylesheet" href="./form.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Animated_Background_UI/BG1.css" />
+    <link rel="stylesheet" href="./form.css" />
   </head>
   <body>
     <!-- Beims Light Background -->
-  <div id="Beims_Light">
-    <div class="glowing">
-      
-      <span style="--i:1;"></span>
-      
-      <span style="--i:2;"></span>
-      
-      <span style="--i:3;"></span>
-      
+    <div id="Beims_Light">
+      <div class="glowing">
+        <span style="--i: 1"></span>
+
+        <span style="--i: 2"></span>
+
+        <span style="--i: 3"></span>
+      </div>
+
+      <div class="glowing">
+        <span style="--i: 1"></span>
+
+        <span style="--i: 2"></span>
+
+        <span style="--i: 3"></span>
+      </div>
+
+      <div class="glowing">
+        <span style="--i: 1"></span>
+
+        <span style="--i: 2"></span>
+
+        <span style="--i: 3"></span>
+      </div>
+
+      <div class="glowing">
+        <span style="--i: 1"></span>
+
+        <span style="--i: 2"></span>
+
+        <span style="--i: 3"></span>
+      </div>
     </div>
-    
-    <div class="glowing">
-      
-      <span style="--i:1;"></span>
-      
-      <span style="--i:2;"></span>
-      
-      <span style="--i:3;"></span>
-      
+    <!-- Form -->
+    <div class="form_questons">
+      <h1>Create your <span id="color_word">website</span> with one click</h1>
+      <form
+        action="http://localhost:3000/submit-form"
+        method="POST"
+        id="Website_info"
+      >
+        <fieldset>
+          <legend></legend>
+          <table>
+            <tr>
+              <td>
+                <label for="web_type"
+                  >Type of <span id="color_word">website</span> you are
+                  building:</label
+                >
+              </td>
+              <td>
+                <div class="limit">
+                  <input
+                    type="text"
+                    id="web_type"
+                    name="web_type"
+                    placeholder="Type here..."
+                  />
+                  <ul class="list overlay"></ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="web_name"
+                  >Name of <span id="color_word">website</span> or
+                  business:</label
+                >
+              </td>
+              <td>
+                <div class="limit">
+                  <input
+                    type="text"
+                    name="web_name"
+                    id="web_name"
+                    placeholder="Type a name here..."
+                  />
+                  <ul class="list2 overlay2"></ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="web_color1"
+                  >Colors <span id="color_word">theme</span> you prefer:</label
+                >
+              </td>
+              <td>
+                <input type="color" name="web_color1" id="web_color1" />
+                <input
+                  type="hidden"
+                  id="color-hidden"
+                  name="color-hidden"
+                  value="#000000"
+                />
+                <input
+                  type="color"
+                  name="web_color2"
+                  id="web_color2"
+                  value="#FFFFFF"
+                />
+                <input
+                  type="color"
+                  name="web_color3"
+                  id="web_color3"
+                  value="#000000"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="web_offer"
+                  >Services <span id="color_word">offered</span> by you:</label
+                >
+              </td>
+              <td>
+                <table id="services">
+                  <td>
+                    <input
+                      type="text"
+                      name="web_offer1"
+                      id="web_offer1"
+                      placeholder="Service 1"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="web_offer2"
+                      id="web_offer2"
+                      placeholder="Service 2"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="web_offer3"
+                      id="web_offer3"
+                      placeholder="Service 3"
+                    />
+                  </td>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td rowspan="2" id="space">Contacts</td>
+                    <td id="posht">
+                      <label for="contact_email">Email:</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lart">
+                      <label for="tel_contact">Phone:</label>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <input
+                  type="email"
+                  name="contact_email"
+                  id="contact_email"
+                  maxlength="200"
+                  minlength="5"
+                  placeholder="example@email.com"
+                /><br />
+                <input
+                  type="tel"
+                  name="tel_contact"
+                  id="tel_contact"
+                  maxlength="15"
+                  minlength="5"
+                  placeholder="1234567890"
+                /><br />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="submit" value="Generate Your Website" />
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+      <script src="form.js"></script>
     </div>
-    
-    <div class="glowing">
-      
-      <span style="--i:1;"></span>
-      
-      <span style="--i:2;"></span>
-      
-      <span style="--i:3;"></span>
-      
-    </div>
-    
-    <div class="glowing">
-      
-      <span style="--i:1;"></span>
-      
-      <span style="--i:2;"></span>
-      
-      <span style="--i:3;"></span>
-    
-    </div>
-</div>
-<!-- Form -->
-<div class="form_questons">
-        <h1>Create your <span id="color_word">website</span> with one click</h1>
-            <form action="http://localhost:3000/submit-form" method="POST" id="Website_info">
-                <fieldset>
-                    <legend></legend>
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="web_type">Type of <span id="color_word">website</span> you are building:</label>
-                            </td>
-                                <td>
-                                    <div class="limit">
-                                        <input type="text" id="web_type" name="web_type" placeholder="Type here..." value="Architecture"/>
-                                        <ul class="list overlay"></ul> 
-                                    </div>
-                                </td>
-                            </tr>
-                        <tr>
-                            <td>
-                                <label for="web_name">Name of <span id="color_word">website</span> or business:</label>
-                            </td>
-                            <td>
-                                <div class="limit">
-                                        <input type="text" name="web_name" id="web_name" placeholder="Type a name here..." value="DeviantArt">
-                                    <ul class="list2 overlay2"></ul> 
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="web_color1">Colors <span id="color_word">theme</span> you prefer:</label>
-                            </td>
-                            <td>
-                                <input type="color" name="web_color1" id="web_color1">
-                                <input type="hidden" id="color-hidden" name="color-hidden" value="#000000">
-                                <input type="color" name="web_color2" id="web_color2" value="#FFFFFF">
-                                <input type="color" name="web_color3" id="web_color3" value="#000000">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="web_offer">Services <span id="color_word">offered</span> by you:</label>
-                            </td>
-                            <td>
-                                <table id="services">
-                                    <td>
-                                        <input type="text" name="web_offer1" id="web_offer1"  placeholder="Service 1" value="Conceptualization">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="web_offer2" id="web_offer2"  placeholder="Service 2" value="Design Development">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="web_offer3" id="web_offer3"  placeholder="Service 3" value="Technical Detailing">
-                                    </td>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td rowspan="2" id="space">
-                                            Contacts
-                                        </td>
-                                        <td id="posht">
-                                            <label for="contact_email">Email:</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td id="lart">
-                                           <label for="tel_contact">Phone:</label>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td>
-                                <input type="email" name="contact_email" id="contact_email"  maxlength="200" minlength="5" placeholder="example@email.com" value="DeviantArt@gmail.com"><br>
-                                <input type="tel" name="tel_contact" id="tel_contact" maxlength="15" minlength="5" placeholder="1234567890" value="+55 555 5555 5555"><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" value="Generate You Website">
-                            </td>
-                            
-                        </tr>
-                    </table>
-                </fieldset>
-            </form>
-        <script src="form.js"></script>
-</div>
   </body>
-	<script>
-        
-    </script>
-  </body>
+  <script></script>
 </html>

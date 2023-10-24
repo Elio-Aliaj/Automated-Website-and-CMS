@@ -1,0 +1,68 @@
+* {
+  border: 0px;
+  margin: 0px;
+}
+
+.img_Section1 {
+  background-image: url(img_Section1_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#img_card1,
+#img_card2,
+#img_card3 {
+  min-height: 300px;
+  max-height: 500px;
+  min-width: 300px;
+  max-width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#img_card1 {
+  background-image: url(./img_Section3_1.png);
+}
+#img_card2 {
+  background-image: url(./img_Section3_2.png);
+}
+#img_card3 {
+  background-image: url(./img_Section3_3.png);
+}
+
+//$Header***
+.Header_AXZCAASD {
+}
+//!Header***
+
+//$Section1***
+.Section1_AXZCAASD {
+}
+//!Section1***
+
+//$Section2***
+.Section2_AXZCAASD {
+}
+//!Section2***
+
+//$Section3***
+.Section3_AXZCAASD {
+}
+//!Section3***
+
+//$Section4***
+#Section4_AXZCAASD {
+}
+//!Section4***
+
+//$Section5***
+.Section5_AXZCAASD {
+}
+//!Section5***
+
+//$Footer***
+.Footer_AXZCAASD {
+}
+//!Footer***
