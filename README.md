@@ -215,6 +215,8 @@ Before getting started, ensure you have the necessary prerequisites:
         <img src="Assets/Edit.jpeg">
         </details>
 
+          ⚠️ Do not make more than one change at a time otherwise you will get an 🛑 Error 429 🛑
+
 ####
 
 #### Generated Website Files ♻️
