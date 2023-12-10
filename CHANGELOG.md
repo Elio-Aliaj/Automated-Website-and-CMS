@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/compare/v0.1.0...v0.1.1) (2023-12-10)
+
+
+### Maintenance Activities
+
+* some fixes for api configuration ([a5bf0e2](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/commit/a5bf0e2bf75592f9ae441ff98377e94aeee7cc75))
+
 ## [0.1.0](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/compare/v0.0.2...v0.1.0) (2023-12-10)
 
 
