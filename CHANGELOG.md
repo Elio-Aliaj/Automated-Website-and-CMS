@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/compare/v0.1.2...v0.1.3) (2023-12-10)
+
+
+### Bug Fixes
+
+* fix license badge ([45a037c](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/commit/45a037cdc1ba6e7b6ad51cadbdc7a7ec94a62c47))
+
 ## [0.1.2](https://github.com/Elio-Aliaj/Automated-Website-and-CMS/compare/v0.1.1...v0.1.2) (2023-12-10)
 
 
