@@ -63,7 +63,7 @@ Automated-Website-and-CMS is a powerful tool designed to simplify website creati
 
   2. **Interactive Fixes**: Users can choose to fix a segment by providing specific instructions. This information, combined with the segment code, is sent to ChatGPT 3.5 Turbo for intelligent adjustments
 
-  3. **Instruction-Only**: Customization: Users can instruct ChatGPT 3.5 Turbo on changes without providing the existing segment code, allowing for complete freedom in designing the section
+  3. **Instruction-Only**: Users can instruct ChatGPT 3.5 Turbo on changes without providing the existing segment code, allowing for complete freedom in designing the section
 
 ### Technology Stack 🧑‍💻
 
@@ -110,8 +110,9 @@ Before getting started, ensure you have the necessary prerequisites:
 
 1. In the main project folder (Automated-Website-and-CMS), locate the `.env.example` file
 2. Rename it to `.env`
-3. Open the `.env` file and replace `API_KEY` with your actual OpenAI API Key.
-4. And replace `ORGANIZATION` with your actual OpenAI API Organization.
+3. Open the `.env` file:
+   - Replace `ID` with your actual OpenAI API Organization Id.
+   - Replace `KEY` with your actual OpenAI API Key.
 
 #### Running 🏃‍♂️
 
@@ -174,7 +175,7 @@ Before getting started, ensure you have the necessary prerequisites:
 
 ####
 
-`Keep this console in view, because it will update you with any changes made to the website or for any errors`
+`Keep this console in view, because it will update you with any changes made to the website or inform for any errors`
 
 3.  Open the Form
 
