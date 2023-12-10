@@ -304,7 +304,7 @@ limitations under the License.
 
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin
 [linkedin-url]: https://www.linkedin.com/in/elio-aliaj-48084a255/
-[license-shield]: https://img.shields.io/github/license/Elio-Aliaj/Automated-Website-and-CMS?style=for-the-badge&logo=apache&logoColor=%23D22128&color=%23D22128
+[license-shield]: https://img.shields.io/github/license/Elio-Aliaj/Automated-Website-and-CMS?style=for-the-badge&logo=Apache&logoColor=%23D22128&color=%23D22128
 [license-url]: https://github.com/Elio-Aliaj/Automated-Website-and-CMS/blob/main/LICENSE.md
 [X-sheild]: https://img.shields.io/badge/Elio%20Aliaj-%23000000?style=for-the-badge&logo=x&labelColor=%23000000
 [X-url]: https://twitter.com/Elio_Aliaj
