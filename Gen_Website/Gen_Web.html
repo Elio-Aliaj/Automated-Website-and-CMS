@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title></title>
     <link rel="stylesheet" href="./Gen_Web.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../Assets/Favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header class="Header_AXZCAASD" id="linkH"></header>
@@ -14,11 +21,21 @@
       <section class="Section1_AXZCAASD img_Section1" id="link1"></section>
       <section class="Section2_AXZCAASD" id="link2"></section>
       <section class="Section3_AXZCAASD" id="link3"></section>
-      <section class="Section4_AXZCAASD" id="link4"></section>
+      <!-- <section class="Section4_AXZCAASD" id="link4"></section> -->
       <section class="Section5_AXZCAASD" id="link5"></section>
     </main>
     <footer class="Footer_AXZCAASD" id="linkF"></footer>
 
-    <script src="Gen_Web.js"></script>
+    <!-- Your can delete from HERE to... -->
+    <script src="../Edit_Website/Edit.js"></script>
+    <script type="module">
+      const socket = new WebSocket("ws://localhost:3000");
+      socket.onmessage = (event) => {
+        if (event.data === "reload") {
+          location.reload();
+        }
+      };
+    </script>
+    <!-- ...to HERE after you are done with the website creation-->
   </body>
 </html>

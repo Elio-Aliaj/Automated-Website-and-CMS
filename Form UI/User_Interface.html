@@ -11,6 +11,12 @@
     />
     <link rel="stylesheet" href="./Animated_Background_UI/BG1.css" />
     <link rel="stylesheet" href="./form.css" />
+    <link
+      rel="icon"
+      href="../Assets/Favicon.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
   </head>
   <body>
     <!-- Beims Light Background -->
@@ -72,6 +78,7 @@
                     id="web_type"
                     name="web_type"
                     placeholder="Type here..."
+                    required
                   />
                   <ul class="list overlay"></ul>
                 </div>
@@ -91,6 +98,7 @@
                     name="web_name"
                     id="web_name"
                     placeholder="Type a name here..."
+                    required
                   />
                   <ul class="list2 overlay2"></ul>
                 </div>
@@ -138,6 +146,7 @@
                       name="web_offer1"
                       id="web_offer1"
                       placeholder="Service 1"
+                      required
                     />
                   </td>
                   <td>
@@ -146,6 +155,7 @@
                       name="web_offer2"
                       id="web_offer2"
                       placeholder="Service 2"
+                      required
                     />
                   </td>
                   <td>
@@ -154,6 +164,7 @@
                       name="web_offer3"
                       id="web_offer3"
                       placeholder="Service 3"
+                      required
                     />
                   </td>
                 </table>
@@ -183,20 +194,26 @@
                   maxlength="200"
                   minlength="5"
                   placeholder="example@email.com"
+                  required
                 /><br />
                 <input
                   type="tel"
                   name="tel_contact"
                   id="tel_contact"
-                  maxlength="15"
+                  maxlength="18"
                   minlength="5"
                   placeholder="1234567890"
+                  required
                 /><br />
               </td>
             </tr>
             <tr>
               <td colspan="2">
-                <input type="submit" value="Generate Your Website" />
+                <input
+                  type="submit"
+                  value="Generate Your Website"
+                  id="submit_Btn"
+                />
               </td>
             </tr>
           </table>

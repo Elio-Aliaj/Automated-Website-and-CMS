@@ -1,0 +1,44 @@
+{
+  "formData": [
+    {
+      "web_type": "Architecture",
+      "web_name": "faafds",
+      "web_color1": "#b04f4f",
+      "color-hidden": "#b04f4f",
+      "web_color2": "#ffffff",
+      "web_color3": "#000000",
+      "web_offer1": "adsf",
+      "web_offer2": "asdf",
+      "web_offer3": "asdf",
+      "contact_email": "asdf@gmai.com",
+      "tel_contact": "6546565",
+      "id": 1
+    }
+  ],
+  "response": [
+    {
+      "response": "$HTML\n<nav class=\"navigation-bar\">\n  <a href=\"#link2\">About</a>\n  <a href=\"#link3\">Services</a>\n  <a href=\"#link5\">Contact</a>\n  <a href=\"#linkF\">Footer</a>\n</nav>\n!HTML\n\n$CSS\n.navigation-bar {\n  background-color: #b04f4f;\n  color: #ffffff;\n}\n\n.navigation-bar a {\n  color: #ffffff;\n  text-decoration: none;\n  padding: 10px;\n}\n\n.navigation-bar a:hover {\n  background-color: #000000;\n}\n!CSS",
+      "id": "Header"
+    },
+    {
+      "response": "$HTML\n<h1 class=\"big-text\">Architecture</h1>\n<p class=\"small-paragraph\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida lectus id pharetra consectetur. Sed facilisis sed mauris nec consequat. In pulvinar justo id urna dapibus tristique. Vivamus ac rutrum leo. Pellentesque consequat malesuada condimentum.</p>\n!HTML\n\n$CSS\n.big-text {\n  font-size: 3em;\n  color: #b04f4f;\n  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);\n}\n\n.small-paragraph {\n  font-size: 1.2em;\n  color: #000000;\n  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);\n}\n!CSS",
+      "id": "Section1"
+    },
+    {
+      "response": "$HTML\n<div class=\"services\">\n  <div class=\"service-card\">\n    <img id=\"img_card1\"/>\n    <h3>Service 1</h3>\n  </div>\n  <div class=\"service-card\">\n    <img id=\"img_card2\"/>\n    <h3>Service 2</h3>\n  </div>\n  <div class=\"service-card\">\n    <img id=\"img_card3\"/>\n    <h3>Service 3</h3>\n  </div>\n</div>\n!HTML\n\n$CSS\n.services {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.service-card {\n  width: 300px;\n  height: 400px;\n  background-color: black; /* Change background color to black */\n  border-radius: 10px;\n  margin: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  color: #ffffff;\n  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);\n}\n\n.service-card img {\n  width: 150px;\n  height: 150px;\n  margin-bottom: 20px;\n}\n\n@media (max-width: 600px) {\n  .service-card {\n    width: 100%;\n  }\n}\n!CSS",
+      "id": "Section3"
+    },
+    {
+      "response": "$HTML\n\n<div class=\"section\">\n  <div class=\"left\">\n    <h1>Welcome to Contact</h1>\n    <p>Thank you for choosing us. If you have any questions or inquiries, please feel free to contact us via email or phone.</p>\n    <p>Email: asdf@gmail.com</p>\n    <p>Phone Number: 6546565</p>\n  </div>\n  <div class=\"right\">\n    <form action=\"mailto:asdf@gmail.com\" method=\"POST\">\n      <label for=\"name\">Name:</label>\n      <input type=\"text\" id=\"name\" name=\"name\" required>\n      \n      <label for=\"email\">Email:</label>\n      <input type=\"email\" id=\"email\" name=\"email\" required>\n      \n      <label for=\"message\">Message:</label>\n      <textarea id=\"message\" name=\"message\" required></textarea>\n      \n      <input type=\"submit\" value=\"Submit\">\n    </form>\n  </div>\n</div>\n\n!HTML\n\n$CSS\n\n.section {\n  display: flex;\n  justify-content: space-between;\n}\n\n.left {\n  width: 50%;\n  padding: 20px;\n  background-color: #b04f4f;\n  color: #ffffff;\n}\n\n.right {\n  width: 50%;\n  padding: 20px;\n  background-color: #ffffff;\n  color: #000000;\n}\n\nform {\n  display: flex;\n  flex-direction: column;\n}\n\nlabel {\n  font-weight: bold;\n}\n\ninput[type=\"text\"],\ninput[type=\"email\"],\ntextarea {\n  margin-bottom: 10px;\n  padding: 5px;\n}\n\ninput[type=\"submit\"] {\n  background-color: #b04f4f;\n  color: #ffffff;\n  padding: 10px;\n  border: none;\n  cursor: pointer;\n}\n\n!CSS",
+      "id": "Section5"
+    },
+    {
+      "response": "$HTML\n<div class=\"segment\">\n  <button>Click Me</button>\n</div>\n!HTML\n\n$CSS\n.segment {\n  text-align: center;\n  padding: 20px;\n}\n\nbutton {\n  padding: 10px 20px;\n  background-color: #4CAF50;\n  color: white;\n  border: none;\n}\n\nbutton:hover {\n  background-color: #45a049;\n  cursor: pointer;\n}\n!CSS\n\n$JavaScript\n// No JavaScript code required for this segment.\n!JavaScript",
+      "id": "Footer"
+    },
+    {
+      "response": "$HTML\n\n<div class=\"about-section\">\n  <h2>About Us</h2>\n  <p>Welcome to faafds, an architecture website dedicated to providing exceptional design and construction services. With our passion for creativity and attention to detail, our goal is to deliver architectural solutions that surpass our clients' expectations.</p>\n  <p>With a focus on innovation and sustainability, we strive to create spaces that not only enhance the visual aesthetics but also improve the quality of life for the end users. Our team of experienced architects and designers work closely with clients to understand their needs and translate them into remarkable architectural designs.</p>\n</div>\n\n!HTML\n\n$CSS\n\n.about-section {\n  background-color: #b04f4f;\n  color: #ffffff;\n  padding: 20px;\n  margin-bottom: 30px;\n}\n\n.about-section h2 {\n  font-size: 24px;\n  margin-bottom: 10px;\n}\n\n.about-section p {\n  font-size: 16px;\n  line-height: 1.5;\n  margin-bottom: 10px;\n}\n\n!CSS",
+      "id": "Section2"
+    }
+  ]
+}

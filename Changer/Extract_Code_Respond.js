@@ -1,13 +1,11 @@
 import chalk from "chalk";
 import webPartCreator from "./Web_Part_Creator.js";
 
-var timeTry = 0;
 export default async function extractCode(aiResponse, formData, webPart) {
   const respondToText = aiResponse.completion.content;
 
   //Extracting the code from the response putting it in an object and returning this object
 
-  timeTry++;
   const htmlStartTag = "$HTML";
   const htmlEndTag = "!HTML";
   var extractedHTML = "";
@@ -49,14 +47,13 @@ export default async function extractCode(aiResponse, formData, webPart) {
 
   //Check up to 3 time if the the tags can be found in not error displayed
 
-  if (extractHtmlCss.stats == "NOT OK" && timeTry < 3) {
+  if (extractHtmlCss.stats == "NOT OK" && formData.reTry < 5) {
     console.log(chalk.red("No tag found."), chalk.yellow("Trying again..."));
+    formData.reTry++;
     await webPartCreator(formData, webPart);
-  }
-  if (timeTry == 3) {
+  } else if (formData.reTry == 5) {
     console.log(chalk.red("Extracting code fail!"));
+    extractHtmlCss.stats = "NOT OK";
   }
-  timeTry = 0;
-
   return extractHtmlCss;
 }

@@ -25,7 +25,6 @@
   font-family: "Roboto Condensed", sans-serif;
   display: flex;
   flex-direction: column;
-  /* overflow: hidden; */
   text-align: center;
   justify-content: center;
   border-radius: 20px;
@@ -49,8 +48,6 @@
 .form_questons legend {
   padding: 12px;
   font-size: 15px;
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-  color: rgb(155, 0, 0);
 }
 .form_questons h1 {
   padding: 5% 10% 0px;
@@ -70,7 +67,7 @@ input:not([type="submit"]) {
   font-size: 15px;
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;  
+  text-align: center;
 }
 input:not([type="color"]) {
   border-radius: 10px;
@@ -138,6 +135,10 @@ input[type="submit"]:hover {
   cursor: pointer;
   animation-name: grow-shrink;
   animation-duration: 0.7s;
+}
+input[type="submit"]:active {
+  background-color: rgba(7, 100, 88, 0.896);
+  transition: none;
 }
 #web_offer {
   margin: 1px;

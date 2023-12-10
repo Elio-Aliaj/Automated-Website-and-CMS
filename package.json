@@ -1,22 +1,31 @@
 {
   "name": "content-management-system",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@release-it/conventional-changelog": "^8.0.1",
     "body-parser": "^1.20.2",
     "chalk": "^5.3.0",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "node-sass": "^8.0.0",
-    "openai": "^3.2.1"
+    "json-server": "^0.17.4",
+    "node-sass": "^9.0.0",
+    "openai": "^3.2.1",
+    "ws": "^7.5.3"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^18.4.3",
+    "release-it": "^17.0.1"
   }
 }
